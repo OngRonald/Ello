@@ -10,10 +10,39 @@ def hello():
 @route('/search')
 def search():
     return '''
+        <html>
+        <head>
+        <style>
+        input[type=text] {
+        width: 130px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color: white;
+        background-image: url('searchicon.png');
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+        padding: 12px 20px 12px 40px;
+        -webkit-transition: width 0.4s ease-in-out;
+        transition: width 0.4s ease-in-out;
+        }
+        
+        input[type=text]:focus {
+        width: 30%;
+        }
+        </style>
+        </head>
+        <body>
+        
+        <p>Ello Search:</p>
         <form action ="/search" method= "post">
         Type Here: <input name="user_input" type="text"/>
         <input value = "Click Here" type="submit" />
         </form>
+        
+        </body>
+        </html>
         '''
 
 @route('/search', method='POST')
